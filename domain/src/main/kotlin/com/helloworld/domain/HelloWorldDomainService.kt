@@ -8,7 +8,7 @@ class HelloWorldDomainService {
     @Value("\${hello.world}")
     lateinit var helloWorld: String
 
-    fun hello() {
-        println(helloWorld)
+    fun hello(): String {
+        return helloWorld
     }
 }

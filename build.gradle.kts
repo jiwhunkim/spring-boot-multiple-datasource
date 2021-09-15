@@ -5,6 +5,7 @@ plugins {
 	id("io.spring.dependency-management") version "1.0.11.RELEASE" apply false
 	kotlin("jvm") version "1.5.21" apply false
 	kotlin("plugin.spring") version "1.5.21" apply false
+    kotlin("plugin.jpa") version "1.5.21" apply false
 	id("org.jlleitschuh.gradle.ktlint") version "10.1.0" apply false
 }
 
@@ -22,7 +23,6 @@ allprojects {
 	tasks.withType<Test> {
 		useJUnitPlatform()
 	}
-
 }
 
 subprojects {
@@ -46,9 +46,10 @@ subprojects {
 		"testImplementation"("org.springframework.boot:spring-boot-starter-test")
 	}
 
-	configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
-		debug.set(true)
-	}
+    configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
+        debug.set(true)
+        disabledRules.add("no-wildcard-imports")
+    }
 }
 
 

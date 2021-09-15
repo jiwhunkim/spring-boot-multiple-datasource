@@ -1,12 +1,12 @@
-package com.helloworld
+package com.helloworld.domain
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class HelloworldApplicationTests {
-
+class DomainEntityTest {
     @Test
-    fun contextLoads() {
+    fun domainEntity() {
+        println("helloWorld")
     }
 }
